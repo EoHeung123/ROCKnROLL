@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Holen";
+  src: url("../font/Holen\ Vintage.otf") format("opentype");
+}
+@font-face {
+  font-family: "Punk";
+  src: url("../font/doctor\ punk.otf") format("opentype");
+}
+@font-face {
+  font-family: "aAnother";
+  src: url("../font/doctor\ aAnotherTag.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/bg_vhs.png");
+  overflow-y: auto;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  text-align: left;
+}
+
+.header-bg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header-folder {
+  position: absolute;
+  top: 20vh;
+  left: 180px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-folder-icon {
+  width: 110px;
+  height: auto;
+}
+
+.header-content {
+  position: relative;
+  top: 40svh;
+  left: 160px;
+  z-index: 3;
+  text-align: left;
+}
+
+.h1 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 26px;
+}
+
+.h2 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 18px;
+}
+
+.h3 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 16px;
+}
+
+.header .h1 {
+  padding-bottom: 20px;
+}
+
+.header-h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.line-vertical {
+  background-color: #252525;
+  height: 28px;
+  width: 5px;
+  margin-right: 10px;
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.main-top-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.main-left-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.todo-section,
+.events-section,
+.rank-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: auto;
+  overflow-y: auto;
+}
+
+.todo-section .h2,
+.events-section .h2,
+.rank-section .h2 {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.todo-list li,
+.events-list li,
+.rank-list li {
+  margin-bottom: 10px;
+}
+
+.main-right-section {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+#calendar {
+  height: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.active {
+  display: block;
+}
+
+#addEventModal.active {
+  display: block;
+  opacity: 1;
+}
+
+.modal label,
+.modal select,
+.modal input {
+  display: block;
+  color: #252525;
+}
+
+.main-bottom-section {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.data-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.canvas {
+  width: 100%;
+  height: 400px;
+}
+
+.rehearsal-recommendation {
+  margin: 20px;
+  padding: 20px;
+  background-color: #252525;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#recommendedDayTime {
+  font-size: 80px;
+  font-family: "Punk";
+  color: #ffffff;
+  white-space: pre-line;
+  letter-spacing: 2px;
+}

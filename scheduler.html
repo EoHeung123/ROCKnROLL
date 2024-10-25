@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <!-- JQuery Load -->
+    <script src="js/fullcalendar-6.1.15/dist/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Toast Calender CSS & JS -->
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css"
+    />
+
+    <!-- DateTime Picker-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
+    <!-- CSS Load -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/scheduler.css" />
+    <script src="js/scheduler.js"></script>
+  </head>
+
+  <body class="body">
+    <!--헤더-->
+    <div class="header">
+      <img
+        src="img/bg_scheduler_header.png"
+        alt="header background"
+        class="header-bg"
+      />
+      <div class="header-folder">
+        <img
+          src="img/icon_folder1.png"
+          alt="band folder icon"
+          class="header-folder-icon"
+        />
+        <div class="h3">Band</div>
+      </div>
+      <div class="header-content">
+        <div class="h1">Get some practice in, you band dudes!</div>
+        <div class="header-h2">
+          <div class="line-vertical"></div>
+          <div class="h2">
+            "We could be an awesome ROCK STAR... if only we practiced more."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--메인화면-->
+    <div class="main-screen">
+      <div class="main-top-section">
+        <div class="main-left-section">
+          <!--Todo-->
+          <div class="todo-section">
+            <div class="h2">To-Do</div>
+            <ul class="todo-list h3">
+              <li><input type="checkbox" /> To-Do 1</li>
+              <li><input type="checkbox" /> To-Do 2</li>
+              <li><input type="checkbox" /> To-Do 3</li>
+              <li><button>Add New</button></li>
+            </ul>
+          </div>
+          <!--Events-->
+          <div class="events-section">
+            <div class="h2">Upcoming Events</div>
+            <ul class="events-list h3">
+              <li>• Something</li>
+              <li>• Something</li>
+              <li>• Something</li>
+              <li><button>Add new</button></li>
+            </ul>
+          </div>
+          <!--Rank-->
+          <div class="rank-section">
+            <div class="h2">Goody-Goody Rank</div>
+            <ul class="rank-list h3">
+              <li>1. Someone</li>
+              <li>2. Someone</li>
+              <li>3. Someone</li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-right-section">
+          <!--Calendar-->
+          <div id="calendar">
+            <div class="modal" id="addEventModal">
+              <!-- 악기 선택 -->
+              <label for="instrument">Instrument:</label>
+              <select id="instrument">
+                <option value="Guitar">Guitar</option>
+                <option value="Drums">Drums</option>
+                <option value="Bass">Bass</option>
+                <option value="Vocals">Vocals</option>
+              </select>
+
+              <!-- 곡 선택 -->
+              <label for="songName">Song Name:</label>
+              <select id="songName">
+                <option value="Song1">Song 1</option>
+                <option value="Song2">Song 2</option>
+                <option value="Song3">Song 3</option>
+              </select>
+
+              <!-- 연주자 선택 -->
+              <label for="performer">Performer:</label>
+              <select id="performer">
+                <option value="John">John</option>
+                <option value="Mike">Mike</option>
+                <option value="Alice">Alice</option>
+                <option value="Jane">Jane</option>
+              </select>
+
+              <!-- 연습 시작 시각 -->
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" />
+
+              <!-- 연습 종료 시각 -->
+              <label for="endTime">End Time:</label>
+              <input type="time" id="endTime" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-bottom-section">
+        <!--통계-->
+        <div class="data-screen">
+          <!--연습량-->
+          <canvas id="practiceTimeChart"></canvas>
+          <!--완성도-->
+          <canvas id="songCompletionChart"></canvas>
+        </div>
+        <!--합주 시간 추천-->
+        <div class="rehearsal-recommendation">
+          <div id="recommendedDayTime">Calulating....</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

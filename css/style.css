@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Holen";
+  src: url("../font/Holen\ Vintage.otf") format("opentype");
+}
+@font-face {
+  font-family: "LED";
+  src: url("../font/LEDLIGHT.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-black {
+  color: #252525;
+}
+
+body,
+html {
+  height: 150%;
+  overflow-x: hidden;
+}
+
+.main-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 높이만큼 차지 */
+  background: url("../img/bg_splash.png") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.h1 {
+  font-size: 100px;
+  margin-bottom: 10px;
+  font-family: "LED";
+}
+
+.h2 {
+  font-family: "Holen";
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* 위쪽에 고정된 h2 */
+.fixed-top {
+  position: fixed;
+  top: 10%;
+}
+
+/* 아래쪽에 고정된 h2 */
+.fixed-bottom {
+  position: fixed;
+  bottom: 10%;
+}
+
+.menu-screen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: url("../img/bg_vhs.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 1s ease-in-out;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-item img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 7px;
+}
+
+.menu-item span {
+  font-family: "Holen";
+  text-align: center;
+  font-size: 39px;
+}
+
+.menu-item:hover {
+  color: #e30000;
+}
+
+.menu-item:nth-child(1),
+.menu-item:nth-child(2),
+.menu-item:nth-child(3) {
+  flex-basis: calc(100% / 3 - 60px);
+}
+
+.menu-item:nth-child(4),
+.menu-item:nth-child(5) {
+  flex-basis: calc(100% / 3 - 60px);
+}
